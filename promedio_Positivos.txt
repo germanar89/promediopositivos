@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float dinero;
+    int contador = 0;
+    int primerDolar = 1;
+    int mayorDolar;
+    int sumaPositivos = 0;
+    int cantidadPositivos = 0;
+    float promedio;
+
+    char tipo; // D dolar, L libra, P pesos
+
+    while (contador<3)
+    {
+
+    printf("ingrese la cantidad de dinero: ");
+
+    scanf("%f",&dinero);
+
+    printf("ingrese tipo de moneda(D dolar, L libra, P pesos): ");
+
+    fflush(stdin);
+
+    scanf("%c", &tipo);
+
+    if (tipo = 'D')
+    {
+
+
+        if(primerDolar == 1)
+        {
+            mayorDolar = dinero;
+            primerDolar = 0;
+
+        }else{
+             if(dinero> mayorDolar)
+             {
+                mayorDolar = dinero;
+
+             }
+        }
+    if( dinero > 0)
+    {
+        sumaPositivos = sumaPositivos + dinero;
+        cantidadPositivos++;
+    }
+        }
+
+
+      contador++;
+
+    }
+ if (primerDolar == 1)
+ {
+
+     printf("no se ingresaron dolares");
+
+     }else{
+        printf("el mayor importe ingresado en Dolares es: %d \n",mayorDolar);
+        }
+promedio = (float) ((float) sumaPositivos/(float) cantidadPositivos);
+printf("cantidad positivos: %.2d \n",cantidadPositivos);
+printf("suma positivos %d \n",sumaPositivos);
+printf("el promedio de la suma de los positivos es: %f \n",promedio);
+ }
